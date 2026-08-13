@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { LeakGuardConfig, ResponseMode } from './types.js';
+import { LeakGuardConfig } from './types.js';
 
 export const DEFAULT_CONFIG: LeakGuardConfig = {
   defaultMode: 'block',

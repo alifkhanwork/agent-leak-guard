@@ -1,9 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { scan } from '../src/index.js';
 import { maskSecretPreview, redactToken } from '../src/redaction/index.js';
-import { PatternDetector } from '../src/detectors/pattern.js';
-
-const patternDetector = new PatternDetector();
 
 function buildAwsKey() {
   const chars = [65,75,73,65,90,55,69,88,65,77,80,76,69,49,50,51,52,53,54,55];

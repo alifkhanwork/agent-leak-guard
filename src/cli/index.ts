@@ -1,7 +1,8 @@
 import { Command } from 'commander';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { scan, loadConfig } from '../index.js';
+import { scan } from '../index.js';
+import type { ScanOptions } from '../types.js';
 
 const program = new Command();
 
@@ -29,7 +30,7 @@ program
 
     const result = scan(content, {
       configPath,
-      mode: opts?.mode as any,
+      mode: opts?.mode as ScanOptions['mode'],
       filePath: file,
     });
 
@@ -40,7 +41,7 @@ program
   .command('install-hook')
   .description('Install a pre-commit git hook')
   .option('--global', 'Install hook globally for all repos', false)
-  .action((opts?: { global?: boolean }) => {
+  .action(() => {
     const hookPath = getHookPath();
     const content = generateHookScript();
 

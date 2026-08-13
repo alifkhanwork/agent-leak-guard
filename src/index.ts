@@ -1,6 +1,6 @@
 import { PatternDetector } from './detectors/pattern.js';
 import { EntropyDetector } from './detectors/entropy.js';
-import { LeakGuardConfig, ScanOptions, ScanResult, InternalMatch } from './types.js';
+import { ScanOptions, ScanResult, InternalMatch } from './types.js';
 import { loadConfig, mergeConfig, isAllowlisted } from './config.js';
 import { redactToken, redactAllMatches, maskSecretPreview } from './redaction/index.js';
 

@@ -5,6 +5,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "bin": {
     "agent-leak-guard": "./dist/cli.js"
   },
@@ -18,27 +25,53 @@
   },
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src tests",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build",
+    "pack:dry": "npm pack --dry-run"
   },
   "keywords": [
+    "ai",
+    "claude",
+    "gemini",
+    "antigravity",
+    "ai-agent",
+    "ai-agents",
     "security",
     "secret-scanner",
     "gitleaks",
-    "ai-agent",
+    "trufflehog",
     "credentials",
     "redact",
+    "redactor",
+    "guardrails",
+    "leak-guard",
     "cli",
-    "git-hook"
+    "git-hook",
+    "pre-commit",
+    "developer-tools",
+    "devtools",
+    "llm",
+    "llm-tools",
+    "ai-coding-assistant",
+    "cursor",
+    "claude-code",
+    "cline",
+    "codex",
+    "windsurf"
   ],
-  "author": "Antigravity Dev",
+  "author": "SVG Team",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alifkhanwork/agent-leak-guard.git"
+  },
+  "homepage": "https://github.com/alifkhanwork/agent-leak-guard#readme",
+  "bugs": {
+    "url": "https://github.com/alifkhanwork/agent-leak-guard/issues"
   },
   "dependencies": {
     "commander": "^12.1.0"
@@ -53,3 +86,4 @@
     "vitest": "^1.6.0"
   }
 }
+
