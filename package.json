@@ -13,10 +13,11 @@
     }
   },
   "bin": {
-    "agent-leak-guard": "./dist/cli.js"
+    "agent-leak-guard": "bin/agent-leak-guard.js"
   },
   "files": [
     "dist",
+    "bin",
     "README.md",
     "LICENSE"
   ],
